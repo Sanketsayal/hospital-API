@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-
+require('dotenv').config();
 
 //connect to DB
-mongoose.connect('mongodb://0.0.0.0:27017/hospital_API');
+mongoose.connect(process.env.MongoDB_URL);
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, "Error connecting to db"));
